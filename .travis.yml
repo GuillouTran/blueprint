@@ -4,7 +4,7 @@ node_js:
 before_script:
   - yarn
   - yarn add codecov
-  - yarn add gastby-cli
+  - yarn add gatsby-cli
 script:
   - gatsby build
   - bash <(curl -s https://codecov.io/bash) 
