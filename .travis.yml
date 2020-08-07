@@ -2,9 +2,6 @@ language: node_js
 node_js:
   - 10
 before_script:
-  - npm i -g gatsby-cli
-  - npm i -g netlify-cli
   - yarn
-
 script:
   - gatsby build
