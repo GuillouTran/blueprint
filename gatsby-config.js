@@ -36,6 +36,14 @@ module.exports = {
       }
     },
     {
+    resolve: 'gatsby-plugin-google-fonts',
+    options: {
+        fonts: [
+          'limelight',
+          'ubuntu mono\:400,400i' // you can also specify font weights and styles
+        ]
+    }},
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
