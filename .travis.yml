@@ -3,5 +3,7 @@ node_js:
   - 10
 before_script:
   - yarn
+  - npm install -g codecov
 script:
   - gatsby build
+  - bash <(curl -s https://codecov.io/bash) 
