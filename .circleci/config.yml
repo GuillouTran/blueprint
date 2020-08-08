@@ -1,7 +1,26 @@
 version: 2.1
 orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      - node/test
+  codecov: codecov/codecov@1.0.2
+jobs:
+  build:
+    working_directory: ~/guilloutran.com
+    docker:
+      - image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo yarn self-update'
+      - run:
+          name: install-dependent
+          command: yarn add gatsby-cli && yarn add codecov
+      - run:
+          name: build
+          command: yarn build
+      - run:
+          name: code-coverage
+          command: 'codecov'
+      - codecov/upload:
+          conf: ~/guilloutran.com/codecov.yml
+          token: 21486d5e-be1f-4075-970e-f18775c48ee1
+          file: {{ coverage_report_filepath }}
