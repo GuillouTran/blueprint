@@ -7,9 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: update-npm
-          command: 'sudo yarn self-update'
-      - run:
           name: install-dependent
           command: yarn add gatsby-cli && yarn add codecov
       - run:
