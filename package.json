@@ -4,7 +4,10 @@
   "version": "1.1.0",
   "author": "Nghia Guillou <will@guilloutran.com>",
   "dependencies": {
+    "agent-base": "^6.0.1",
     "algolia": "^0.0.0",
+    "algoliasearch": "^4.4.0",
+    "autocomplete.js": "^0.37.1",
     "codecov": "^3.7.2",
     "gatsby": "^2.24.38",
     "gatsby-cli": "^2.12.77",
@@ -41,6 +44,7 @@
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
+    "react-instantsearch-dom": "^6.7.0",
     "react-share": "^4.1.0",
     "react-twitter-widgets": "^1.9.5",
     "url-join": "^4.0.0"

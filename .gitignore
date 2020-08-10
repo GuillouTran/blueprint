@@ -62,4 +62,6 @@ bundle-stats.json
 .DS_Store
 
 #Ignore Enviroment Variable
+.env.production
+.env
 .env.*
