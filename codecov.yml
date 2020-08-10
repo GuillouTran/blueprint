@@ -1,0 +1,13 @@
+codecov:
+  token: "21486d5e-be1f-4075-970e-f18775c48ee1"
+  bot: "codecov-io"
+  ci:
+    - "travis.com"
+    - "circle-ci"
+coverage:
+  range: 50..80
+  round: up
+  precision: 2
+parsers:
+  javascript:
+    enable_partials: yes

@@ -1,0 +1,17 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/guilloutran.com
+    docker:
+      - image: circleci/node:10.16.3
+    steps:
+      - checkout
+      - run:
+          name: install-dependent
+          command: yarn add gatsby-cli && yarn add codecov
+      - run:
+          name: build
+          command: yarn build
+      - run:
+          name: code-coverage
+          command: 'yarn codecov'
