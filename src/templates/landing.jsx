@@ -6,25 +6,7 @@ import PostListing from "../components/PostListing/PostListing";
 import SEO from "../components/SEO/SEO";
 import config from "../../data/SiteConfig";
 import "./landing.css"
-
-class Landing extends React.Component {
-  render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges;
-    return (
-      <Layout>
-        <div className="landing-container">
-          <div className="posts-container">
-            <Helmet title={config.siteTitle} />
-            <SEO />
-            <PostListing postEdges={postEdges} />
-          </div>
-        </div>
-      </Layout>
-    );
-  }
-}
-
-export default Landing;
+import Search from "../components/Search/search.js";
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -49,3 +31,27 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+class Landing extends React.Component {
+  render() {
+    const postEdges = this.props.data.allMarkdownRemark.edges;
+    return (
+      <div>
+      <Layout>
+      <Search/>  
+      </Layout>
+      <Layout>
+        <div className="landing-container">
+          <div className="posts-container">
+            <Helmet title={config.siteTitle} />
+            <SEO />
+            <PostListing postEdges={postEdges} />
+          </div>
+        </div>
+      </Layout>
+      </div>
+    );
+  }
+}
+export default Landing;
+

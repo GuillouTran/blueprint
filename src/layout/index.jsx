@@ -13,7 +13,10 @@ export default class MainLayout extends React.Component {
           <html lang="en" />
         </Helmet>
         {children}
+        <div>
+        </div>
       </div>
+      
     );
   }
 }
