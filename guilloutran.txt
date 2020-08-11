@@ -1,0 +1,164 @@
+.
+├── sider.yml
+├── public
+│   ├── logos
+│   │   ├── logo-192.png
+│   │   ├── logo-512.png
+│   │   ├── logo-1024.png
+│   │   └── logo-48.png
+│   ├── page-data
+│   │   ├── about
+│   │   │   └── page-data.json
+│   │   ├── dev-404-page
+│   │   │   └── page-data.json
+│   │   ├── big-sample-test
+│   │   │   └── page-data.json
+│   │   ├── birch-in-the-roses
+│   │   │   └── page-data.json
+│   │   ├── index
+│   │   │   └── page-data.json
+│   │   ├── random-project-4-with-super-long-title-phase-one
+│   │   │   └── page-data.json
+│   │   ├── angels-of-mist
+│   │   │   └── page-data.json
+│   │   ├── the-fallen-time
+│   │   │   └── page-data.json
+│   │   ├── the-fairys-witches
+│   │   │   └── page-data.json
+│   │   ├── the-butterfly-of-the-edge
+│   │   │   └── page-data.json
+│   │   ├── bold-mage
+│   │   │   └── page-data.json
+│   │   ├── categories
+│   │   │   ├── another-one
+│   │   │   │   └── page-data.json
+│   │   │   ├── something
+│   │   │   │   └── page-data.json
+│   │   │   ├── random
+│   │   │   │   └── page-data.json
+│   │   │   ├── tech
+│   │   │   │   └── page-data.json
+│   │   │   ├── test-3
+│   │   │   │   └── page-data.json
+│   │   │   └── moar
+│   │   │       └── page-data.json
+│   │   └── tags
+│   │       ├── more-tags
+│   │       │   └── page-data.json
+│   │       ├── another-one
+│   │       │   └── page-data.json
+│   │       ├── tagging
+│   │       │   └── page-data.json
+│   │       ├── something
+│   │       │   └── page-data.json
+│   │       ├── test
+│   │       │   └── page-data.json
+│   │       ├── cheese
+│   │       │   └── page-data.json
+│   │       ├── stuff
+│   │       │   └── page-data.json
+│   │       ├── say-hi
+│   │       │   └── page-data.json
+│   │       ├── other
+│   │       │   └── page-data.json
+│   │       ├── programming
+│   │       │   └── page-data.json
+│   │       ├── testing
+│   │       │   └── page-data.json
+│   │       ├── tag
+│   │       │   └── page-data.json
+│   │       └── huge
+│   │           └── page-data.json
+│   ├── index.html
+│   ├── manifest.webmanifest
+│   ├── static
+│   ├── robots.txt
+│   └── admin
+│       ├── config.yml
+│       ├── react.production.min.js
+│       ├── index.html
+│       ├── react-dom.production.min.js
+│       ├── netlify-cms-app.js
+│       ├── netlify-identity.js.map
+│       ├── netlify-identity.js
+│       ├── netlify-cms-app.js.map
+│       ├── cms.js.map
+│       └── cms.js
+├── data
+│   └── SiteConfig.js
+├── LICENSE
+├── yarn-error.log
+├── jsconfig.json
+├── package.json
+├── content
+│   ├── 01-01-2017.md
+│   ├── 02-03-2017.md
+│   ├── 17-03-2017.md
+│   ├── 02-04-2017.md
+│   ├── 23-03-2017.md
+│   ├── 01-03-2017.md
+│   ├── 01-02-2017.md
+│   └── Big_Sample_Post.md
+├── src
+│   ├── favicon.ico
+│   ├── utils
+│   │   └── algolia-queries.js
+│   ├── netlifycms
+│   │   └── index.js
+│   ├── pages
+│   │   └── about.jsx
+│   ├── layout
+│   │   ├── index.css
+│   │   └── index.jsx
+│   ├── templates
+│   │   ├── category.jsx
+│   │   ├── post.css
+│   │   ├── landing.css
+│   │   ├── post.jsx
+│   │   ├── listing.jsx
+│   │   ├── b16-tomorrow-dark.css
+│   │   ├── tag.jsx
+│   │   ├── listing.css
+│   │   └── landing.jsx
+│   └── components
+│       ├── Search
+│       │   └── search.js
+│       ├── About
+│       │   ├── About.jsx
+│       │   └── About.css
+│       ├── Disqus
+│       │   └── Disqus.jsx
+│       ├── PostTags
+│       │   └── PostTags.jsx
+│       ├── Footer
+│       │   ├── Footer.css
+│       │   └── Footer.jsx
+│       ├── UserLinks
+│       │   ├── UserLinks.css
+│       │   └── UserLinks.jsx
+│       ├── PostListing
+│       │   └── PostListing.jsx
+│       ├── UserInfo
+│       │   └── UserInfo.jsx
+│       ├── SEO
+│       │   └── SEO.jsx
+│       └── SocialLinks
+│           ├── SocialLinks.css
+│           └── SocialLinks.jsx
+├── gatsby-config.js
+├── static
+│   ├── logos
+│   │   ├── logo-192.png
+│   │   ├── logo-512.png
+│   │   ├── logo-1024.png
+│   │   └── logo-48.png
+│   ├── robots.txt
+│   └── admin
+│       └── config.yml
+├── gatsby-browser.js
+├── yarn.lock
+├── guilloutran.txt
+├── gatsby-node.js
+└── codecov.yml
+
+59 directories, 102 files

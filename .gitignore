@@ -64,4 +64,3 @@ bundle-stats.json
 #Ignore Enviroment Variable
 .env.production
 .env
-.env.*
