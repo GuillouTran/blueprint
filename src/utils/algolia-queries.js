@@ -1,4 +1,4 @@
-const escapeStringRegexp = require("escape-string-regexp")
+const escapeStringRegexp = require('escape-string-regexp');
 
 const pageQuery = `
   query LandingQuery {
@@ -23,17 +23,34 @@ const pageQuery = `
     }
   }
 `;
-function pageToAlgoliaRecord({node : {id, frontmatter, fields, ...rest}}) {
-  return { objectID: id, ...frontmatter, ...fields, ...rest, }
+function pageToAlgoliaRecord({
+	node: {
+		id,
+		frontmatter,
+		fields,
+		...rest
+	},
+}) {
+	return {
+		objectID: id,
+		...frontmatter,
+		...fields,
+		...rest,
+	};
 }
 
 const queries = [
-  {
-    query : pageQuery,
-    transformer : ({data}) =>
-        data.allMarkdownRemark.edges.map(pageToAlgoliaRecord), // optional
-    indexName : 'Posts', // overrides main index name, optional
-  },
+	{
+		query: pageQuery,
+		transformer: ({
+			data,
+		}) =>
+			data.allMarkdownRemark.edges.map(
+				pageToAlgoliaRecord
+			), // optional
+		indexName:
+			'Posts', // overrides main index name, optional
+	},
 ];
 
-module.exports = queries
+module.exports = queries;
