@@ -2,85 +2,65 @@ const urljoin = require("url-join");
 const path = require("path");
 const config = require("./data/SiteConfig");
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path : `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
-  pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
-  siteMetadata: {
-    siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-    rssMetadata: {
-      site_url: urljoin(config.siteUrl, config.pathPrefix),
-      feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
-      title: config.siteTitle,
-      description: config.siteDescription,
-      image_url: `${urljoin(
-        config.siteUrl,
-        config.pathPrefix
-      )}/logos/logo-512.png`,
-      copyright: config.copyright
+  pathPrefix : config.pathPrefix === "" ? "/" : config.pathPrefix,
+  siteMetadata : {
+    siteUrl : urljoin(config.siteUrl, config.pathPrefix),
+    rssMetadata : {
+      site_url : urljoin(config.siteUrl, config.pathPrefix),
+      feed_url : urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
+      title : config.siteTitle,
+      description : config.siteDescription,
+      image_url :
+          `${urljoin(config.siteUrl, config.pathPrefix)}/logos/logo-512.png`,
+      copyright : config.copyright
     }
   },
-  plugins: [
+  plugins : [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-lodash",
     "gatsby-plugin-styled-components",
     "gatsby-source-fontawesome",
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "assets",
-        path: `${__dirname}/static/`
-      }
+      resolve : "gatsby-source-filesystem",
+      options : {name : "assets", path : `${__dirname}/static/`}
     },
     {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "posts",
-        path: `${__dirname}/content/`
-      }
+      resolve : "gatsby-source-filesystem",
+      options : {name : "posts", path : `${__dirname}/content/`}
     },
     {
-    resolve: 'gatsby-plugin-google-fonts',
-    options: {
-        fonts: [
+      resolve : 'gatsby-plugin-google-fonts',
+      options : {
+        fonts : [
           'limelight',
-          'ubuntu mono\:400,400i' // you can also specify font weights and styles
+          'ubuntu mono\:400,400i' // you can also specify font weights and
+                                  // styles
         ]
-    }},
+      }
+    },
     {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-relative-images`
-          },
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 690
-            }
-          },
-          {
-            resolve: "gatsby-remark-responsive-iframe"
-          },
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-autolink-headers",
+      resolve : "gatsby-transformer-remark",
+      options : {
+        plugins : [
+          {resolve : `gatsby-remark-relative-images`},
+          {resolve : "gatsby-remark-images", options : {maxWidth : 690}},
+          {resolve : "gatsby-remark-responsive-iframe"},
+          "gatsby-remark-copy-linked-files", "gatsby-remark-autolink-headers",
           "gatsby-remark-prismjs"
         ]
       }
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: config.googleAnalyticsID
-      }
+      resolve : "gatsby-plugin-google-analytics",
+      options : {trackingId : config.googleAnalyticsID}
     },
     {
-      resolve: "gatsby-plugin-nprogress",
-      options: {
-        color: config.themeColor
-      }
+      resolve : "gatsby-plugin-nprogress",
+      options : {color : config.themeColor}
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -88,50 +68,43 @@ module.exports = {
     "gatsby-plugin-twitter",
     "gatsby-plugin-sitemap",
     {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: config.siteTitle,
-        short_name: config.siteTitleShort,
-        description: config.siteDescription,
-        start_url: config.pathPrefix,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: "minimal-ui",
-        icons: [
-          {
-            src: "/logos/logo-192.png",
-            sizes: "192x192",
-            type: "image/png"
-          },
-          {
-            src: "/logos/logo-512.png",
-            sizes: "512x512",
-            type: "image/png"
-          }
+      resolve : "gatsby-plugin-manifest",
+      options : {
+        name : config.siteTitle,
+        short_name : config.siteTitleShort,
+        description : config.siteDescription,
+        start_url : config.pathPrefix,
+        background_color : config.backgroundColor,
+        theme_color : config.themeColor,
+        display : "minimal-ui",
+        icons : [
+          {src : "/logos/logo-192.png", sizes : "192x192", type : "image/png"},
+          {src : "/logos/logo-512.png", sizes : "512x512", type : "image/png"}
         ]
       }
     },
     "gatsby-plugin-offline",
     {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        modulePath: path.resolve("src/netlifycms/index.js"), // default: undefined
-        enableIdentityWidget: true,
-        publicPath: "admin",
-        htmlTitle: "Content Manager",
-        includeRobots: false
+      resolve : "gatsby-plugin-netlify-cms",
+      options : {
+        modulePath :
+            path.resolve("src/netlifycms/index.js"), // default: undefined
+        enableIdentityWidget : true,
+        publicPath : "admin",
+        htmlTitle : "Content Manager",
+        includeRobots : false
       }
     },
     {
-      resolve: "gatsby-plugin-feed",
-      options: {
+      resolve : "gatsby-plugin-feed",
+      options : {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
           ret.generator = "GatsbyJS Advanced Starter";
           return ret;
         },
-        query: `
+        query : `
         {
           site {
             siteMetadata {
@@ -147,24 +120,24 @@ module.exports = {
           }
         }
       `,
-        feeds: [
-          {
-            serialize(ctx) {
-              const { rssMetadata } = ctx.query.site.siteMetadata;
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
-                categories: edge.node.frontmatter.tags,
-                date: edge.node.fields.date,
-                title: edge.node.frontmatter.title,
-                description: edge.node.excerpt,
-                url: rssMetadata.site_url + edge.node.fields.slug,
-                guid: rssMetadata.site_url + edge.node.fields.slug,
-                custom_elements: [
-                  { "content:encoded": edge.node.html },
-                  { author: config.userEmail }
-                ]
-              }));
-            },
-            query: `
+        feeds : [ {
+          serialize(ctx) {
+            const {rssMetadata} = ctx.query.site.siteMetadata;
+            return ctx.query.allMarkdownRemark.edges.map(
+                edge => ({
+                  categories : edge.node.frontmatter.tags,
+                  date : edge.node.fields.date,
+                  title : edge.node.frontmatter.title,
+                  description : edge.node.excerpt,
+                  url : rssMetadata.site_url + edge.node.fields.slug,
+                  guid : rssMetadata.site_url + edge.node.fields.slug,
+                  custom_elements : [
+                    {"content:encoded" : edge.node.html},
+                    {author : config.userEmail}
+                  ]
+                }));
+          },
+          query : `
             {
               allMarkdownRemark(
                 limit: 1000,
@@ -191,28 +164,30 @@ module.exports = {
               }
             }
           `,
-            output: config.siteRss,
-            title: config.siteRssTitle
-          }
-        ]
+          output : config.siteRss,
+          title : config.siteRssTitle
+        } ]
       }
     },
     {
-      // This plugin must be placed last in your list of plugins to ensure that it can query all the GraphQL data
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        // Use Admin API key without GATSBY_ prefix, so that the key isn't exposed in the application
-        // Tip: use Search API key with GATSBY_ prefix to access the service from within components
-        apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
-        queries: require("./src/utils/algolia-queries"),
-        chunkSize: 10000, // default: 1000
-        settings: {
-          // optional, any index settings
+      // This plugin must be placed last in your list of plugins to ensure that
+      // it can query all the GraphQL data
+      resolve : `gatsby-plugin-algolia`,
+      options : {
+        appId : process.env.ALGOLIA_APP_ID,
+        // Use Admin API key without GATSBY_ prefix, so that the key isn't
+        // exposed in the application Tip: use Search API key with GATSBY_
+        // prefix to access the service from within components
+        apiKey : process.env.ALGOLIA_API_KEY,
+        indexName : process.env.ALGOLIA_INDEX_NAME, // for all queries
+        queries : require("./src/utils/algolia-queries"),
+        chunkSize : 10000, // default: 1000
+        settings : {
+            // optional, any index settings
         },
-        enablePartialUpdates: true, // default: false
-        matchFields: ['slug', 'modified'], // Array<String> default: ['modified']
+        enablePartialUpdates : true, // default: false
+        matchFields :
+            [ 'slug', 'modified' ], // Array<String> default: ['modified']
       },
     },
   ]
