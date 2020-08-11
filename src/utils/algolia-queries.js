@@ -36,7 +36,7 @@ const queries = [
     {
         query: pageQuery,
         transformer: ({ data }) => data.allMarkdownRemark.edges.map(pageToAlgoliaRecord), // optional
-        indexName: 'prod_GuillouTran', // overrides main index name, optional
+        indexName: 'Posts', // overrides main index name, optional
     },
     ];
 
