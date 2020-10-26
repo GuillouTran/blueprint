@@ -36,7 +36,7 @@
     "lodash": "^4.17.20",
     "moment": "^2.26.0",
     "netlify-cms-app": "^2.12.25",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.22.0",
     "react": "^16.14.0",
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.14.0",
