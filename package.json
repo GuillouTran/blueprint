@@ -12,7 +12,7 @@
     "gatsby-plugin-algolia": "^0.11.2",
     "gatsby-plugin-catch-links": "^2.3.11",
     "gatsby-plugin-feed": "^2.6.0",
-    "gatsby-plugin-google-analytics": "^2.3.2",
+    "gatsby-plugin-google-analytics": "^2.4.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-google-fonts-v2": "^0.0.6",
     "gatsby-plugin-lodash": "^3.3.10",
