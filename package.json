@@ -19,7 +19,7 @@
     "gatsby-plugin-manifest": "^2.5.2",
     "gatsby-plugin-netlify-cms": "^4.3.17",
     "gatsby-plugin-nprogress": "^2.3.10",
-    "gatsby-plugin-offline": "^3.2.31",
+    "gatsby-plugin-offline": "^3.3.3",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-sharp": "^2.6.26",
     "gatsby-plugin-sitemap": "^2.4.3",
