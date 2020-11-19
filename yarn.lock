@@ -8431,12 +8431,12 @@ gatsby-plugin-ts@^2.7.0:
     gatsby-plugin-graphql-codegen "^2.7.1"
     ts-loader "^6.2.1"
 
-gatsby-plugin-twitter@^2.3.2:
-  version "2.3.10"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-2.3.10.tgz#1605b39385c475b234eafc422019cb36a7a14648"
-  integrity sha512-WQzjGpeKCdxujzAWE2yFOKaI494J/Qb6vhDdLvtevOAZVXSaMdTSfwSSUr17jsu8TV5s47fasKox+h/0uRlJUw==
+gatsby-plugin-twitter@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-2.4.0.tgz#43c599460f15d27f7453805ed22bece73752c680"
+  integrity sha512-jeQwPP70AQicWusPu4q4d1IR2hCYL68uej0teNRqusTVtSsjaZIy7irQRJISOhb7pbwLB18QNs47NPVYeB/jYQ==
   dependencies:
-    "@babel/runtime" "^7.10.3"
+    "@babel/runtime" "^7.11.2"
 
 gatsby-plugin-typescript@^2.4.21:
   version "2.4.24"
